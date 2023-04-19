@@ -71,6 +71,27 @@ telebirr = Telebirr(
 response = telebirr.send_request()
 ``` 
 
+```python
+from telebirr import TelebirrSuperApp
+
+private_key = "YOUR PUBLIC KEY FORM TELEBIRR ADMIN"
+telebirr = TelebirrSuperApp(
+    app_id="YOUR APP ID FROM TELEBIRR ADMIN",
+    app_key="YOUR APP KEY FROM TELEBIRR ADMIN",
+    public_key=private_key,
+    notify_url="https://example.com/telebirr/121232",
+    receive_name="Your company name",
+    return_url="https://example.com/",
+    short_code="SHORT CODE FROM TELEBIRR ADMIN",
+    subject="Test",
+    timeout_express="30",
+    total_amount="10",
+    nonce="UNIQUE",
+    out_trade_no="UNIQUE"
+)
+response = telebirr.send_request()
+``` 
+
 ## Decryption
 
 After the payment is successfully completed telebirr will send you notification through the notification url 

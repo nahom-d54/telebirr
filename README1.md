@@ -34,6 +34,34 @@ encrypt(public_key, msg)
 Encrypts the message using the given public key and returns the encrypted message as a string.
 __encrypt_ussd(ussd, public_key)
 
+```
+# Import the Telebirr class
+from telebirr import Telebirr
+
+# Initialize the Telebirr class
+telebirr = Telebirr(
+    app_id='your_app_id',
+    app_key='your_app_key',
+    public_key='your_public_key',
+    notify_url='https://your_notify_url.com',
+    receive_name='your_receive_name',
+    return_url='https://your_return_url.com',
+    short_code='your_short_code',
+    subject='your_subject',
+    timeout_express=30,
+    total_amount=100.0,
+    nonce='your_nonce',
+    out_trade_no='your_out_trade_no'
+)
+
+# Send the request to Telebirr
+response = telebirr.send_request()
+
+# Decrypt the response
+decrypted_response = telebirr.decrypt(public_key='your_public_key', payload=response['ussd'])
+
+```
+
 Encrypts the ussd dictionary using the given public key and returns the encrypted data as a string.
 __sign(ussd, app_key)
 

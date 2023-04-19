@@ -35,10 +35,9 @@ Encrypts the message using the given public key and returns the encrypted messag
 __encrypt_ussd(ussd, public_key)
 
 ```
-# Import the Telebirr class
+
 from telebirr import Telebirr
 
-# Initialize the Telebirr class
 telebirr = Telebirr(
     app_id='your_app_id',
     app_key='your_app_key',
@@ -54,10 +53,8 @@ telebirr = Telebirr(
     out_trade_no='your_out_trade_no'
 )
 
-# Send the request to Telebirr
 response = telebirr.send_request()
 
-# Decrypt the response
 decrypted_response = telebirr.decrypt(public_key='your_public_key', payload=response['ussd'])
 
 ```

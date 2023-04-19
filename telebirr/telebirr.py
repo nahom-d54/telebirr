@@ -10,15 +10,15 @@ from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15
 
 from . import utils
 
+base_url = "http://196.188.120.3:10443"
 
 class Telebirr:
-    api = "http://196.188.120.3:10443/service-openup/toTradeWebPay"
+    api = base_url + "/service-openup/toTradeWebPay"
 
     def __init__(self, app_id, app_key, public_key, notify_url, receive_name, return_url, short_code, subject,
-                 timeout_express, total_amount, nonce, out_trade_no,
-                 api="http://196.188.120.3:10443/service-openup/toTradeWebPay"):
+                 timeout_express, total_amount, nonce, out_trade_no):
 
-        self.api = api
+        self.api = self.api
         self.app_id = app_id
         ussd = {
             "appId": self.app_id,
@@ -89,13 +89,13 @@ class Telebirr:
 
 
 class TelebirrSuperApp:
-    def __init__(self, short_code, app_key, app_secret, merchant_id, private_key, url):
+    def __init__(self, short_code, app_key, app_secret, merchant_id, private_key):
         self.short_code = short_code
         self.app_key = app_key
         self.app_secret = app_secret
         self.merchant_id = merchant_id
         self.private_key = private_key
-        self.url = url
+        self.url = base_url
 
     def apply_fabric_token(self):
         response = requests.post(url=self.url + "/apiaccess/payment/gateway/payment/v1/token",

@@ -1,4 +1,4 @@
-#Telebirr Documentation
+# Telebirr Documentation
 
 This class provides an interface for interacting with the Telebirr payment gateway API.
 Initialization

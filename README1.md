@@ -1,22 +1,22 @@
-## Telebirr Documentation
+#Telebirr Documentation
 
 This class provides an interface for interacting with the Telebirr payment gateway API.
 Initialization
 
 The Telebirr class is initialized with the following parameters:
 
-    app_id (string): The app ID obtained from Telebirr.
-    app_key (string): The app key obtained from Telebirr.
-    public_key (string): The public key obtained from Telebirr.
-    notify_url (string): The URL to which Telebirr will send a notification when the payment is completed.
-    receive_name (string): The name of the person receiving the payment.
-    return_url (string): The URL to which the customer will be redirected after completing the payment.
-    short_code (string): The short code for the payment.
-    subject (string): The subject of the payment.
-    timeout_express (int): The time in minutes for the payment to expire.
-    total_amount (float): The total amount to be paid.
-    nonce (string): A unique identifier for the payment request.
-    out_trade_no (string): The transaction ID for the payment request.
+app_id (string): The app ID obtained from Telebirr.
+app_key (string): The app key obtained from Telebirr.
+public_key (string): The public key obtained from Telebirr.
+notify_url (string): The URL to which Telebirr will send a notification when the payment is completed.
+receive_name (string): The name of the person receiving the payment.
+return_url (string): The URL to which the customer will be redirected after completing the payment.
+short_code (string): The short code for the payment.
+subject (string): The subject of the payment.
+timeout_express (int): The time in minutes for the payment to expire.
+total_amount (float): The total amount to be paid.
+nonce (string): A unique identifier for the payment request.
+out_trade_no (string): The transaction ID for the payment request.
 
 Methods
 request_params()

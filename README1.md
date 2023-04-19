@@ -5,18 +5,18 @@ Initialization
 
 The Telebirr class is initialized with the following parameters:
 
-app_id (string): The app ID obtained from Telebirr.
-app_key (string): The app key obtained from Telebirr.
-public_key (string): The public key obtained from Telebirr.
-notify_url (string): The URL to which Telebirr will send a notification when the payment is completed.
-receive_name (string): The name of the person receiving the payment.
-return_url (string): The URL to which the customer will be redirected after completing the payment.
-short_code (string): The short code for the payment.
-subject (string): The subject of the payment.
-timeout_express (int): The time in minutes for the payment to expire.
-total_amount (float): The total amount to be paid.
-nonce (string): A unique identifier for the payment request.
-out_trade_no (string): The transaction ID for the payment request.
+    app_id (string): The app ID obtained from Telebirr.
+    app_key (string): The app key obtained from Telebirr.
+    public_key (string): The public key obtained from Telebirr.
+    notify_url (string): The URL to which Telebirr will send a notification when the payment is completed.
+    receive_name (string): The name of the person receiving the payment.
+    return_url (string): The URL to which the customer will be redirected after completing the payment.
+    short_code (string): The short code for the payment.
+    subject (string): The subject of the payment.
+    timeout_express (int): The time in minutes for the payment to expire.
+    total_amount (float): The total amount to be paid.
+    nonce (string): A unique identifier for the payment request.
+    out_trade_no (string): The transaction ID for the payment request.
 
 Methods
 request_params()
@@ -34,10 +34,12 @@ encrypt(public_key, msg)
 Encrypts the message using the given public key and returns the encrypted message as a string.
 __encrypt_ussd(ussd, public_key)
 
-```
+```python
 
+# Import the Telebirr class
 from telebirr import Telebirr
 
+# Initialize the Telebirr class
 telebirr = Telebirr(
     app_id='your_app_id',
     app_key='your_app_key',
@@ -53,9 +55,12 @@ telebirr = Telebirr(
     out_trade_no='your_out_trade_no'
 )
 
+# Send the request to Telebirr
 response = telebirr.send_request()
 
+# Decrypt the response
 decrypted_response = telebirr.decrypt(public_key='your_public_key', payload=response['ussd'])
+
 
 ```
 

@@ -1,7 +1,7 @@
 
-	<h1>Telebirr Class</h1>
-	<p>This class provides functionality for interacting with the Telebirr API.</p>
-    <h2>Constructor</h2>
+<h1>Telebirr Class</h1>
+<p>This class provides functionality for interacting with the Telebirr API.</p>
+<h2>Constructor</h2>
 <p>The constructor takes in the following parameters:</p>
 <ul>
 	<li><code>app_id</code>: The ID of the app.</li>

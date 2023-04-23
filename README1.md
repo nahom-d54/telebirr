@@ -1,70 +1,55 @@
-# Telebirr Documentation
 
-This class provides an interface for interacting with the Telebirr payment gateway API.
-Initialization
+	<h1>Telebirr Class</h1>
+	<p>This class provides functionality for interacting with the Telebirr API.</p>
+    <h2>Constructor</h2>
+<p>The constructor takes in the following parameters:</p>
+<ul>
+	<li><code>app_id</code>: The ID of the app.</li>
+	<li><code>app_key</code>: The app key used to sign the request.</li>
+	<li><code>public_key</code>: The public key used to encrypt the request.</li>
+	<li><code>notify_url</code>: The URL to which the notification should be sent.</li>
+	<li><code>receive_name</code>: The name of the receiver of the payment.</li>
+	<li><code>return_url</code>: The URL to which the user should be redirected after the payment is completed.</li>
+	<li><code>short_code</code>: The short code for the payment.</li>
+	<li><code>subject</code>: The subject of the payment.</li>
+	<li><code>timeout_express</code>: The timeout for the payment.</li>
+	<li><code>total_amount</code>: The total amount of the payment.</li>
+	<li><code>nonce</code>: A random nonce value.</li>
+	<li><code>out_trade_no</code>: The trade number for the payment.</li>
+</ul>
 
-The Telebirr class is initialized with the following parameters:
+<h2>Methods</h2>
 
-    app_id (string): The app ID obtained from Telebirr.
-    app_key (string): The app key obtained from Telebirr.
-    public_key (string): The public key obtained from Telebirr.
-    notify_url (string): The URL to which Telebirr will send a notification when the payment is completed.
-    receive_name (string): The name of the person receiving the payment.
-    return_url (string): The URL to which the customer will be redirected after completing the payment.
-    short_code (string): The short code for the payment.
-    subject (string): The subject of the payment.
-    timeout_express (int): The time in minutes for the payment to expire.
-    total_amount (float): The total amount to be paid.
-    nonce (string): A unique identifier for the payment request.
-    out_trade_no (string): The transaction ID for the payment request.
+<h3>__encrypt_ussd</h3>
+<p>A static method used to encrypt the request.</p>
+<ul>
+	<li><code>ussd</code>: The request body.</li>
+	<li><code>public_key</code>: The public key used for encryption.</li>
+</ul>
 
-Methods
-request_params()
+<h3>encrypt</h3>
+<p>A static method used to encrypt the request using RSA.</p>
+<ul>
+	<li><code>public_key</code>: The public key used for encryption.</li>
+	<li><code>msg</code>: The message to be encrypted.</li>
+</ul>
 
-Returns a dictionary containing the request parameters.
-send_request()
+<h3>__sign</h3>
+<p>A static method used to sign the request.</p>
+<ul>
+	<li><code>ussd</code>: The request body.</li>
+	<li><code>app_key</code>: The app key used for signing.</li>
+</ul>
 
-Sends a request to the Telebirr API and returns the response.
-decrypt(public_key, payload)
+<h3>request_params</h3>
+<p>A method that returns the request parameters.</p>
 
-Decrypts the payload using the given public key and returns the decrypted data as a dictionary.
-Static Methods
-encrypt(public_key, msg)
+<h3>send_request</h3>
+<p>A method that sends the request to the API and returns the response.</p>
 
-Encrypts the message using the given public key and returns the encrypted message as a string.
-__encrypt_ussd(ussd, public_key)
-
-```python
-
-# Import the Telebirr class
-from telebirr import Telebirr
-
-# Initialize the Telebirr class
-telebirr = Telebirr(
-    app_id='your_app_id',
-    app_key='your_app_key',
-    public_key='your_public_key',
-    notify_url='https://your_notify_url.com',
-    receive_name='your_receive_name',
-    return_url='https://your_return_url.com',
-    short_code='your_short_code',
-    subject='your_subject',
-    timeout_express=30,
-    total_amount=100.0,
-    nonce='your_nonce',
-    out_trade_no='your_out_trade_no'
-)
-
-# Send the request to Telebirr
-response = telebirr.send_request()
-
-# Decrypt the response
-decrypted_response = telebirr.decrypt(public_key='your_public_key', payload=response['ussd'])
-
-
-```
-
-Encrypts the ussd dictionary using the given public key and returns the encrypted data as a string.
-__sign(ussd, app_key)
-
-Returns a string containing the signature for the given ussd dictionary and app key.
+<h3>decrypt</h3>
+<p>A static method used to decrypt the response.</p>
+<ul>
+	<li><code>public_key</code>: The public key used for decryption.</li>
+	<li><code>payload</code>: The payload to be decrypted.</li>
+</ul>

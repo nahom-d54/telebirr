@@ -53,3 +53,37 @@
 	<li><code>public_key</code>: The public key used for decryption.</li>
 	<li><code>payload</code>: The payload to be decrypted.</li>
 </ul>
+
+```python
+from telebirr import Telebirr
+
+app_id = 'YOUR_APP_ID'
+app_key = 'YOUR_APP_KEY'
+public_key = 'YOUR_PUBLIC_KEY'
+notify_url = 'https://example.com/notify'
+return_url = 'https://example.com/return'
+short_code = 'YOUR_SHORT_CODE'
+subject = 'YOUR_SUBJECT'
+timeout_express = '30m'
+total_amount = 100
+nonce = 'YOUR_NONCE'
+out_trade_no = 'YOUR_OUT_TRADE_NO'
+
+telebirr = Telebirr(
+    app_id=app_id,
+    app_key=app_key,
+    public_key=public_key,
+    notify_url=notify_url,
+    receive_name='Test User',
+    return_url=return_url,
+    short_code=short_code,
+    subject=subject,
+    timeout_express=timeout_express,
+    total_amount=total_amount,
+    nonce=nonce,
+    out_trade_no=out_trade_no
+)
+
+response = telebirr.send_request()
+print(response)
+```

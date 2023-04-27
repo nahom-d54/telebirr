@@ -82,7 +82,8 @@ telebirr = TelebirrSuperApp(
      merchant_id = " YOUR MERCHANT ID FROM TELEBIRR ADMIN",
      short_code="SHORT CODE FROM TELEBIRR ADMIN",
 )
-response = telebirr.request_create_order()
+response = telebirr.request_create_order(nonce_str = "nonce" , amount = :int , notify_url = :str, redirect_url = :str, merch_order_id = :int , timeout_express = :int, title = :str,
+                             business_type, payee_identifier_type)
 ``` 
 
 ## Decryption

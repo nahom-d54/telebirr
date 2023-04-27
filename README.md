@@ -82,7 +82,7 @@ telebirr = TelebirrSuperApp(
      merchant_id = " YOUR MERCHANT ID FROM TELEBIRR ADMIN",
      short_code="SHORT CODE FROM TELEBIRR ADMIN",
 )
-response = telebirr.send_request()
+response = telebirr.request_create_order()
 ``` 
 
 ## Decryption
